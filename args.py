@@ -13,8 +13,10 @@ def get_parser():
     parser.add_argument("--url", type=str, default="",
                         help="Jable TV URL to download")
     parser.add_argument("--all-urls", type=str, default="",
-                        help="Jable URL contains multiple avs")
-    
+                        help="Jable URL contains multiple avs"),
+    parser.add_argument("-n", type=str, default="",
+                        help="Jable TV code to download")
+
     return parser
 
 

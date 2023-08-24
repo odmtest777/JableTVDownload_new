@@ -20,6 +20,9 @@ elif(args.all_urls != ""):
     urls = movieLinks(all_urls)
     for url in urls:
         download(url)
+elif(args.n != ""):
+    url = 'https://jable.tv/videos/' + args.n + "/"
+    download(url)
 else:
     # 使用者輸入Jable網址
     url = input('輸入jable網址:')
