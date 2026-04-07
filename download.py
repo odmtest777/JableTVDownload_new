@@ -46,6 +46,9 @@ def download(url):
   dr = webdriver.Chrome(options=options, executable_path='C:\GreenSoftware\chromedriver.exe')
 #   dr = webdriver.Chrome(options=options)
   dr.get(url)
+
+  # 取得封面
+  getCover(html_file=dr.page_source, folder_path=folderPath)
   result = re.search("https://.+m3u8", dr.page_source)
   print(f'result: {result}')
   m3u8url = result[0]
@@ -100,9 +103,6 @@ def download(url):
 
   # 刪除子mp4
   deleteMp4(folderPath)
-
-  # 取得封面
-  getCover(html_file=dr.page_source, folder_path=folderPath)
 
   # 轉檔
   # ffmpegEncode(folderPath, dirName, encode)
